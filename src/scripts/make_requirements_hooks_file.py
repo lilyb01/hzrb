@@ -14,6 +14,7 @@ def get_requirements(theme: str) -> Set[str]:
 
 
 def main():
+    global CONTENT_DIR
     comic_info = read_info("comic_info.ini")
     theme = get_option(comic_info, "Comic Settings", "Theme", default="default")
     CONTENT_DIR = get_option(comic_info, "Comic Settings", "Content folder", default="content")
