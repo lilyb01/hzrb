@@ -14,10 +14,10 @@ def get_requirements(theme: str) -> Set[str]:
 
 
 def main():
-    find_project_root()
     comic_info = read_info("comic_info.ini")
     theme = get_option(comic_info, "Comic Settings", "Theme", default="default")
     CONTENT_DIR = get_option(comic_info, "Comic Settings", "Content folder", default="content")
+    find_project_root(CONTENT_DIR)
     requirements = get_requirements(theme)
     print(requirements)
     # Build any extra comics that may be needed
