@@ -17,7 +17,14 @@
        becomes `/comic_git/comic` #}
     <div id="comic-page">
         <a href="{{ comic_base_dir }}/comic/{{ next_id }}/#comic-page">
-            <img id="comic-image" src="{{ base_dir }}/{{ comic_path }}" title="{{ alt_text }}"/>
+            {# <img id="comic-image" src="{{ base_dir }}/{{ comic_path }}" title="{{ alt_text }}"/> #}
+            <picture>
+                <source media="all and (orientation: landscape)" srcset="{{ base_dir }}/{{ comic_path }}">
+                {% if comic_path_mobile %}
+                    <source media="all and (orientation: portrait)" srcset="{{ base_dir }}/{{ comic_path_mobile }}">
+                {% endif %}
+                <img src="{{ base_dir }}/{{ comic_path }}" title="{{ alt_text }}">
+            </picture>
         </a>
     </div>
 
@@ -97,7 +104,7 @@
 {{ post_html }}
         </div>
         {% if transcripts %}
-        <table id="transcripts-container" border>
+        <table id="transcripts-container">
             <tr>
                 <td id="transcript-panel">
                     <h3>Transcript</h3>

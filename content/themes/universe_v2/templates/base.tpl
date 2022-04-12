@@ -1,6 +1,5 @@
 {# This template is the base for all other templates, meaning that all other templates will be adding to the blocks
    in this template, before they're used to create HTML files. #}
-{{ autogenerate_warning }}
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns#">
 <head>
@@ -43,32 +42,26 @@
     {%- endblock %}
 </head>
 <body>
-{# This is the start of the `body` block. This is where all the visible parts of the website show up. #}
 {% block body %}
 <div id="container">
-    <div id="banner">
-        <a id="banner-img-link" href="{{ base_dir }}/">
+   <div id="banner">
+      <a id="banner-img-link" href="{{ base_dir }}/">
             <img id="banner-img" alt="banner" src="{{ banner_image }}">
-        </a>
-    </div>
-    <div id="links-bar">
-    {# For loops let you take a list of a values and do something for each of those values. In this case,
-       it runs through list of all the links provided by the [Links Bar] section of your comic_info.ini file,
-       and it generates a link for each of them. #}
-    {%- for link in links %}
-        <a class="link-bar-link" href="{{ link.url }}">{{ link.name }}</a>
-        {% if not loop.last %}<span class="link-bar-separator">|</span>{% endif %}
-    {%- endfor %}
-    </div>
+      </a>
+   </div>
+   <div id="links-bar">
+   {%- for link in links %}
+      <a class="link-bar-link" href="{{ link.url }}">{{ link.name }}</a>
+      {% if not loop.last %}<span class="link-bar-separator">|</span>{% endif %}
+   {%- endfor %}
+   </div>
+   <div id="inner-container">
+      {% block content %}{% endblock %}
 
-    {# This is the start of the `content` block. Nothing is here now because other templates are expected to fill it
-       in on their own. It will contain everything on a webpage after the links bar and before the
-       "Powered by comic_git" footer. #}
-    {% block content %}{% endblock %}
-
-    <div id="powered-by">
-        Powered by <a id="powered-by-link" href="https://ryanvilbrandt.github.io/comic_git">comic_git</a> v{{ version }}
-    </div>
+      <div id="powered-by">
+         Powered by <a id="powered-by-link" href="https://ryanvilbrandt.github.io/comic_git">comic_git</a> v{{ version }}
+      </div>
+   </div>
 </div>
 {% endblock %}
 </body>
