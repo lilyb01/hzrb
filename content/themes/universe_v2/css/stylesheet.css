@@ -34,9 +34,10 @@ a {
 }
 
 #container {
-    max-width: 1000px;  /* The width of the main box that contains all content on the pages */
+    width: 1200px;
+    max-width: 100%;  /* The width of the main box that contains all content on the pages */
     background-color: white;  /* The background color of the main box */
-    box-shadow: 5px 5px 10px rgb(226, 226, 226);  /* This is the drop shadow of the main box. If you change the background color
+    box-shadow: 5px 5px 10px rgba(120, 120, 120, 0.2);  /* This is the drop shadow of the main box. If you change the background color
                                             of your website, play with this or else it will look bad. */
     padding: 0;
     margin: 0;
@@ -85,6 +86,10 @@ a.navigation-button-disabled {
 .button {
     background-color: #2E9BC7;  /* Color of button hyperlinks */
     color: white;  /* Color of the words in button hyperlinks */
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
 }
 
 .button:hover {
@@ -94,7 +99,7 @@ a.navigation-button-disabled {
 
 /* Comic page-specific styling */
 #blurb {
-    background-color: #F6FBFE;  /* The color of the "blurb" box that contains post title, post date, tags, etc. */
+     background-color: unset; /*#F6FBFE;  /* The color of the "blurb" box that contains post title, post date, tags, etc. */
     width: 75%;  /* The maximum width of the blurb box. */
     /* border-left: 3px dotted #62C5E8;  /* If you change the background color of the blurb, play with these two lines or else it will look bad 
     border-right: 3px dotted #62C5E8; */
@@ -113,4 +118,8 @@ h1#post-title {
 
 #storyline, #characters, #tags {
     font-style: italic;  /* Delete this to unitalicize the tags */
+}
+
+#transcript-panel {
+    min-width: 80%;
 }

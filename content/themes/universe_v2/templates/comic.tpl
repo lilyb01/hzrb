@@ -25,6 +25,17 @@
                 {% endif %}
                 <img src="{{ base_dir }}/{{ comic_path }}" title="{{ alt_text }}">
             </picture>
+            {% if extrafiles %}
+                {%- for file in extrafiles %}
+                    <picture>
+                        <source media="all and (orientation: landscape)" srcset="{{ base_dir }}/{{ page_dir }}{{ file }}">
+                        {% if extramobile %}
+                        <source media="all and (orientation: portrait)" srcset="{{ base_dir }}/{{page_dir}}{{ extramobile[loop.index0] }}">
+                        {% endif %}
+                        <img src="{{ base_dir }}/{{ page_dir }}/{{ file }}" title="{{ alt_text }}">
+                    </picture>
+                {%- endfor %}
+            {% endif %}
         </a>
     </div>
 
@@ -104,10 +115,10 @@
 {{ post_html }}
         </div>
         {% if transcripts %}
-        <table id="transcripts-container">
+        <a class="button" id="transcript-toggle">Show Transcript</a>
+        <table id="transcripts-container" style="display:none;">
             <tr>
                 <td id="transcript-panel">
-                    <h3>Transcript</h3>
                     <div id="active-transcript">
                     {% for language, transcript in transcripts.items() %}
                         <div class="transcript" id='{{ language }}-transcript'>

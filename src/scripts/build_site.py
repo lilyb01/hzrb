@@ -331,7 +331,11 @@ def create_comic_data(comic_folder: str, comic_info: RawConfigParser, page_info:
     post_html = MARKDOWN.convert("\n\n".join(post_html))
     d = {
         "page_name": page_info["page_name"],
+        "page_dir": page_dir,
         "filename": page_info["Filename"],
+        "filename_mobile": None if "FilenameMobile" not in page_info else page_info["FilenameMobile"],
+        "extrafiles": None if "ExtraFilenames" not in page_info else page_info["ExtraFilenames"].split (", "),
+        "extramobile": None if "ExtraMobiles" not in page_info else page_info["ExtraMobiles"].split (", "),
         "comic_path": page_dir + page_info["Filename"],
         "comic_path_mobile": None if "FilenameMobile" not in page_info else page_dir + page_info["FilenameMobile"],
         "thumbnail_path": os.path.join(page_dir, "thumbnail.jpg"),

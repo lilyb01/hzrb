@@ -1,5 +1,18 @@
 
 export function init() {
+    const container = document.getElementById("transcripts-container");
+    const btn = document.getElementById("transcript-toggle");
+    btn.onclick = function () {
+        if (container.style.display !== "none") {
+            container.style.display = "none";
+            btn.innerText = "Show Transcript";
+        } else {
+            container.style.display = "block";
+            btn.innerText = "Hide Transcript";
+        }
+    };
+
+
     let languageList = document.getElementById("language-select");
     let transcriptList = document.getElementById("active-transcript");
     let transcripts = transcriptList.children;

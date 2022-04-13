@@ -14,7 +14,7 @@ cdata_dict = {}
 
 def add_base_tags_to_channel(channel, comic_url, comic_info):
     atom_link = ElementTree.SubElement(channel, "{http://www.w3.org/2005/Atom}link")
-    atom_link.set("href", urljoin(comic_url, "feed.xml"))
+    atom_link.set("href", comic_url + "/feed.xml")
     atom_link.set("rel", "self")
     atom_link.set("type", "application/rss+xml")
 
@@ -31,7 +31,7 @@ def add_image_tag(channel, comic_url, comic_info):
     image_tag = ElementTree.SubElement(channel, "image")
     ElementTree.SubElement(image_tag, "title").text = comic_info.get("Comic Info", "Comic name")
     ElementTree.SubElement(image_tag, "link").text = comic_url
-    ElementTree.SubElement(image_tag, "url").text = urljoin(comic_url, comic_info.get("RSS Feed", "Image"))
+    ElementTree.SubElement(image_tag, "url").text = comic_url + "/" + comic_info.get("RSS Feed", "Image")
     ElementTree.SubElement(image_tag, "width").text = comic_info.get("RSS Feed", "Image width")
     ElementTree.SubElement(image_tag, "height").text = comic_info.get("RSS Feed", "Image height")
 
@@ -45,7 +45,7 @@ def add_item(xml_parent, comic_data, comic_url, comic_info):
         comic_info.get("Comic Info", "Author")
     post_date = strptime(comic_data["post_date"], comic_info.get("Comic Settings", "Date format"))
     ElementTree.SubElement(item, "pubDate").text = strftime("%a, %d %b %Y %H:%M:%S +0000", post_date)
-    direct_link = urljoin(comic_url, "comic/{}/".format(post_id))
+    direct_link = comic_url + "/comic/{}/".format(post_id)
     ElementTree.SubElement(item, "link").text = direct_link
     ElementTree.SubElement(item, "guid", isPermaLink="true").text = direct_link
     if "storyline" in comic_data:
@@ -62,7 +62,7 @@ def add_item(xml_parent, comic_data, comic_url, comic_info):
             e = ElementTree.SubElement(item, "category")
             e.attrib["type"] = "tag"
             e.text = tag
-    comic_image_url = urljoin(comic_url, "{}/comics/{}/{}".format(CONTENT_DIR, post_id, comic_data["filename"]))
+    comic_image_url = comic_url + "/{}/comics/{}/{}".format(CONTENT_DIR, post_id, comic_data["filename"])
     html = build_rss_post(comic_image_url, comic_data.get("alt_text"), comic_data["post_html"])
     cdata_dict["post_id_" + post_id] = "<![CDATA[{}]]>".format(html)
     ElementTree.SubElement(item, "description").text = "{post_id_" + post_id + "}"
@@ -88,6 +88,7 @@ def pretty_xml(element):
 
 
 def build_rss_feed(comic_info: RawConfigParser, comic_data_dicts: List[Dict]):
+    global CONTENT_DIR
     CONTENT_DIR = comic_info.get("Comic Settings", "Content folder")
     global cdata_dict
 

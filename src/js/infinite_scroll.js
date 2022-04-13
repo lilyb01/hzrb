@@ -88,13 +88,50 @@ function build_comic_div(page) {
     let link_node = document.createElement("a");
     link_node.href = `${comic_base_dir}/comic/${page["page_name"]}/`;
 
+    let picture_node = document.createElement("picture");
+    let source_node = document.createElement("source");
+    source_node.setAttribute("media", "all and (orientation: landscape)")
+    source_node.setAttribute("srcset", `${content_base_dir}/comics/${page["page_name"]}/${page["Filename"]}`)
+    picture_node.appendChild(source_node);
+    if ( page["FilenameMobile"] ) {
+        let source_node = document.createElement("source");
+        source_node.setAttribute("media", "all and (orientation: portrait)")
+        source_node.setAttribute("srcset", `${content_base_dir}/comics/${page["page_name"]}/${page["FilenameMobile"]}`)
+        picture_node.appendChild(source_node);
+    }
     let image_node = document.createElement("img");
     image_node.className = "infinite-page-image";
     console.log("Adding div for page " + page["page_name"]);
     image_node.src = `${content_base_dir}/comics/${page["page_name"]}/${page["Filename"]}`;
     image_node.title = page["Alt text"];
 
-    link_node.appendChild(image_node);
+    picture_node.appendChild(image_node);
+    link_node.appendChild(picture_node);
+
+    if ( page["ExtraFilenames"] ) {
+        let extra = page["ExtraFilenames"].split(", ");
+        for ( let i=0; i < extra.length; i++) {
+            let picture_node = document.createElement("picture");
+            let source_node = document.createElement("source");
+            source_node.setAttribute("media", "all and (orientation: landscape)")
+            source_node.setAttribute("srcset", `${content_base_dir}/comics/${page["page_name"]}/${extra[i]}`)
+            picture_node.appendChild(source_node);
+            if ( page["ExtraMobiles"] ) {
+                let source_node = document.createElement("source");
+                source_node.setAttribute("media", "all and (orientation: portrait)")
+                source_node.setAttribute("srcset", `${content_base_dir}/comics/${page["page_name"]}/${page["ExtraMobiles"].split(", ")[i]}`)
+                picture_node.appendChild(source_node);
+            }
+            let image_node = document.createElement("img");
+            image_node.className = "infinite-page-image";
+            console.log("Adding multiple images for page" + page["page_name"]);
+            image_node.src = `${content_base_dir}/comics/${page["page_name"]}/${extra[i]}`;
+            image_node.title = page["Alt text"];
+            picture_node.appendChild(image_node);
+            link_node.appendChild(picture_node);
+        }
+    }
+
     node.appendChild(link_node);
     return node;
 }
