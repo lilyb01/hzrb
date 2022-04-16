@@ -1,14 +1,3 @@
-/*
-Change these options to customize the color scheme and a few layout options of your website.
-Most layout options are stored in src/css/advanced_stylesheet.css. I do not recommend messing with those settings
-unless you know what you're doing, or you're willing to spend a lot of time on trial and error.
-
-For any colors, you can represent them in hexadecimal like this (#FF0000 = red)
-or use this list of available color names: https://www.w3schools.com/cssref/css_colors.asp
- */
-
-/* Global values */
-
 html {
     height: 100%;
     margin: 0;
@@ -17,28 +6,40 @@ html {
 body {
     height: 100%;
     margin: 0;
-    font-family: 'PT Sans', sans-serif;  /* The font of all the text on all pages */
-    color: black;  /* The color of the font of most of the text on your website */
-    background-color: white;  /* The color of the background behind everything */
-    background-image: url("../../../images/8-1-wide.png");
-    background-size: cover;
-    background-attachment: fixed;
+    font-family: 'Noto Sans', sans-serif;
+    color: black;
+    background-color: unset;
+    background-image: unset;
 }
 
 h1, h2, h3 {
-    font-family: 'Roboto Slab', cursive;
+    font-family: 'Noto Sans', cursive;
 }
 
 a {
-    color: #2E9BC7;  /* The color of the hyperlinks */
+    color: #2E9BC7;
+}
+
+/* realistically im not doing anything that would require the background to be done
+   as a div, however it would be really useful if i decide to blur the bg or something */
+#background {
+    background-image: url("../../../images/8-1-wide.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: -1;
 }
 
 #container {
     width: 1200px;
-    max-width: 100%;  /* The width of the main box that contains all content on the pages */
-    background-color: white;  /* The background color of the main box */
-    box-shadow: 5px 5px 10px rgba(120, 120, 120, 0.2);  /* This is the drop shadow of the main box. If you change the background color
-                                            of your website, play with this or else it will look bad. */
+    max-width: 100%; 
+    background-color: white;
+    box-shadow: 0px 0px 15px rgba(120, 120, 120, 0.2);
     padding: 0;
     margin: 0;
     min-height: 100%;
@@ -55,37 +56,37 @@ a {
 
 /* Top navigation links bar */
 #links-bar {
-    background: unset;  /* The background color of your links bar */
+    background: unset;
     border-bottom: solid #2E9BC7 5px;
 }
 
 a.link-bar-link {
-    color: black;  /* The color of the links in your links bar */
-    font-weight: bold;  /* Delete this to unbold the links in your links bar*/
-    text-decoration: none;  /* Delete this line to put underlining on the links in your links bar */
+    color: black; 
+    font-weight: normal;
+    text-decoration: none;
 }
 
 a.link-bar-link:hover {
-    color: #2E9BC7;  /* The color of the links in your links bar while the cursor is hovering over them */
+    color: #2E9BC7;
 }
 
 /* Comic navigation buttons */
 a.navigation-button {
-    color: #2E9BC7;  /* Color of the navigation bar hyperlinks */
-    font-size: 2em;  /* Size of the navigation bar hyperlinks */
-    text-decoration: none;  /* Delete this if you want your navigation links to be underlined */
+    color: #2E9BC7; 
+    font-size: 2em; 
+    text-decoration: none;
 }
 
 a.navigation-button-disabled {
-    color: gray;  /* Color of the disabled navigation bar hyperlinks */
-    font-size: 2em;  /* Size of the disabled navigation bar hyperlinks */
-    text-decoration: none;  /* Delete this if you want your disabled navigation links to be underlined */
+    color: gray;
+    font-size: 2em;
+    text-decoration: none;
 }
 
 /* Buttons: turn any link into a button by adding class="button" within the a tag */
 .button {
-    background-color: #2E9BC7;  /* Color of button hyperlinks */
-    color: white;  /* Color of the words in button hyperlinks */
+    background-color: #2E9BC7;
+    color: white;
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
@@ -93,31 +94,31 @@ a.navigation-button-disabled {
 }
 
 .button:hover {
-    background-color: #62C5E8;  /* Color of button hyperlinks when the mouse hovers over it */
-    color: white;    /* Color of the words in button hyperlinks when the mouse hovers over it */
+    background-color: #62C5E8;
+    color: white;
 }
 
 /* Comic page-specific styling */
 #blurb {
-     background-color: unset; /*#F6FBFE;  /* The color of the "blurb" box that contains post title, post date, tags, etc. */
-    width: 75%;  /* The maximum width of the blurb box. */
-    /* border-left: 3px dotted #62C5E8;  /* If you change the background color of the blurb, play with these two lines or else it will look bad 
+     background-color: unset; /*#F6FBFE;*/
+    width: 75%; 
+    /* border-left: 3px dotted #62C5E8;
     border-right: 3px dotted #62C5E8; */
     border: none;
 }
 
 h1#post-title {
-    color: black;  /* Color of the post title */
-    font-size: 3em;  /* Font size of the post title */
-    font-family: 'Roboto Slab', cursive;
+    color: black;
+    font-size: 3em;
+    font-family: 'Noto Sans', cursive;
 }
 
 #post-date {
-    font-weight: bold;  /* Delete this to unbold the post date */
+    font-weight: bold;
 }
 
 #storyline, #characters, #tags {
-    font-style: italic;  /* Delete this to unitalicize the tags */
+    font-style: unset;
 }
 
 #transcript-panel {
