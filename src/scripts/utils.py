@@ -24,10 +24,8 @@ def get_comic_url(comic_info: RawConfigParser):
         if not comic_domain:
             comic_domain = f"{repo_author}.github.io"
         if not base_directory:
-            base_directory = repo_name
-            if base_directory.lower() == f"{repo_author.lower()}.github.io":
-                # In this case, Github will try to deploy to http://<username>.github.io/ so we unset base_directory
-                base_directory = ""
+            # by default comic_git makes the base directory the repo name if you're using gh pages. this is problematic if you use a custom domain. god.
+            base_directory = ""
     # Helpful error for dumb schmucks trying to build locally for the first time
     if not comic_domain:
         raise ValueError(
