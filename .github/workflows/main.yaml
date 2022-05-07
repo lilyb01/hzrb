@@ -20,7 +20,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           fetch-depth: 0
-          ref: main
+          ref: working
       - name: Switch to the master branch (or create it if it doesn't exist)
         run: |
           git checkout -B master
