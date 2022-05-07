@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Load repository
         uses: actions/checkout@v2
+      - name: Pull repo
+        run: git pull
       - name: Switch to the master branch (or create it if it doesn't exist)
         run: |
           git checkout -B master
