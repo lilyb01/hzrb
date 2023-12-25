@@ -61,7 +61,7 @@
 
       <div id="powered-by">
          <p><a href="https://twitter.com/i/events/1489393522671239170">twitter</a> - <a href="https://hazelandrobyn.tumblr.com/">tumblr</a> - <a href="https://www.webtoons.com/en/challenge/hazel-and-robyn/list?title_no=637873">webtoons</a> - <a href="https://tapas.io/series/Hazel-and-Robyn/info">tapas</a></p>
-         <p>copyleft 2021-2022 Lily B.</br>
+         <p>copyleft 2021-2023 Lily B.</br>
          Powered by <a id="powered-by-link" href="https://ryanvilbrandt.github.io/comic_git">comic_git</a> v{{ version }}</p>
       </div>
    </div>
