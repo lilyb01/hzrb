@@ -509,17 +509,17 @@ def write_tagged_pages(comic_data_dicts: List[Dict], global_values: Dict):
         utils.write_to_template("tagged", f"tagged/{tag}/index.html", data_dict)
 
 
-def get_extra_comic_info(folder_name: str, comic_info: RawConfigParser):
+def get_extra_comic_info(folder_name: str, comic_info: RawConfigParser, contentdir):
     comic_info = deepcopy(comic_info)
     # Always delete existing Pages section; by default, extra comic provides no additional pages
     del comic_info["Pages"]
     # Delete "Links Bar" from original if the extra comic's info has that section defined
     extra_comic_info = RawConfigParser()
-    extra_comic_info.read(f"{CONTENT_DIR}/{folder_name}/comic_info.ini")
+    extra_comic_info.read(f"{contentdir}/{folder_name}/comic_info.ini")
     if extra_comic_info.has_section("Links Bar"):
         del comic_info["Links Bar"]
     # Read the extra comic info in again, to merge with the original comic info
-    comic_info.read(f"{CONTENT_DIR}/{folder_name}/comic_info.ini")
+    comic_info.read(f"{contentdir}/{folder_name}/comic_info.ini")
     return comic_info
 
 
@@ -568,7 +568,7 @@ def main(delete_scheduled_posts=False, publish_all_comics=False):
     # Build any extra comics that may be needed
     for extra_comic in get_extra_comics_list(comic_info):
         print(extra_comic)
-        extra_comic_info = get_extra_comic_info(extra_comic, comic_info)
+        extra_comic_info = get_extra_comic_info(extra_comic, comic_info, CONTENT_DIR)
         os.makedirs(extra_comic, exist_ok=True)
         build_and_publish_comic_pages(
             comic_url, extra_comic.strip("/") + "/", extra_comic_info, delete_scheduled_posts, publish_all_comics,
