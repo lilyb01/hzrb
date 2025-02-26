@@ -515,11 +515,11 @@ def get_extra_comic_info(folder_name: str, comic_info: RawConfigParser):
     del comic_info["Pages"]
     # Delete "Links Bar" from original if the extra comic's info has that section defined
     extra_comic_info = RawConfigParser()
-    extra_comic_info.read(f"{CONTENT_DIR}/{folder_name}/comic_info.ini")
+    extra_comic_info.read(f"/{folder_name}/comic_info.ini")
     if extra_comic_info.has_section("Links Bar"):
         del comic_info["Links Bar"]
     # Read the extra comic info in again, to merge with the original comic info
-    comic_info.read(f"{CONTENT_DIR}/{folder_name}/comic_info.ini")
+    comic_info.read(f"/{folder_name}/comic_info.ini")
     return comic_info
 
 
