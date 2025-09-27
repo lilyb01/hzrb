@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <atom:link href="https://hazelandrobyn.buny.plus/feed.xml" rel="self" type="application/rss+xml"/>
+        <title>Hazel and Robyn</title>
+        <description>A webcomic following the misadventures of Hazel and Robyn, two rabbit siblings from Wintersville trying to figure out the world and themselves.</description>
+        <link>https://hazelandrobyn.buny.plus</link>
+        <dc:creator>Lily B. ~ BUNyPLUS</dc:creator>
+        <language>en-us</language>
+        <image>
+            <title>Hazel and Robyn</title>
+            <link>https://hazelandrobyn.buny.plus</link>
+            <url>https://hazelandrobyn.buny.plus/content/images/banner.png</url>
+            <width>100</width>
+            <height>36</height>
+        </image>
+        <item>
+            <title>The Beginning (Page 1)</title>
+            <dc:creator>Lily B. ~ BUNyPLUS</dc:creator>
+            <pubDate>Wed, 26 Feb 2025 00:00:00 +0000</pubDate>
+            <link>https://hazelandrobyn.buny.plus/comic/1/</link>
+            <guid isPermaLink="true">https://hazelandrobyn.buny.plus/comic/1/</guid>
+            <category type="storyline">Chapter One</category>
+            <category type="character">Hazel</category>
+            <category type="character">Robyn</category>
+            <description><![CDATA[<p><img src="https://hazelandrobyn.buny.plus/content/comics/1/page1.png" alt_text="the timeline has been altered"></p>
+
+<hr>
+
+<p></p>
+]]></description>
+        </item>
+        <item>
+            <title>The Beginning (Page 2)</title>
+            <dc:creator>Lily B. ~ BUNyPLUS</dc:creator>
+            <pubDate>Thu, 27 Feb 2025 00:00:00 +0000</pubDate>
+            <link>https://hazelandrobyn.buny.plus/comic/2/</link>
+            <guid isPermaLink="true">https://hazelandrobyn.buny.plus/comic/2/</guid>
+            <category type="storyline">Chapter One</category>
+            <category type="character">Hazel</category>
+            <category type="character">Robyn</category>
+            <description><![CDATA[<p><img src="https://hazelandrobyn.buny.plus/content/comics/2/page2.png"></p>
+
+<hr>
+
+<p></p>
+]]></description>
+        </item>
+        <item>
+            <title>The Beginning (Page 3)</title>
+            <dc:creator>Lily B. ~ BUNyPLUS</dc:creator>
+            <pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate>
+            <link>https://hazelandrobyn.buny.plus/comic/3/</link>
+            <guid isPermaLink="true">https://hazelandrobyn.buny.plus/comic/3/</guid>
+            <category type="storyline">Chapter One</category>
+            <category type="character">Hazel</category>
+            <category type="character">Robyn</category>
+            <description><![CDATA[<p><img src="https://hazelandrobyn.buny.plus/content/comics/3/page3.png"></p>
+
+<hr>
+
+<p></p>
+]]></description>
+        </item>
+        <item>
+            <title>The Beginning (Page 4)</title>
+            <dc:creator>Lily B. ~ BUNyPLUS</dc:creator>
+            <pubDate>Sat, 01 Mar 2025 00:00:00 +0000</pubDate>
+            <link>https://hazelandrobyn.buny.plus/comic/4/</link>
+            <guid isPermaLink="true">https://hazelandrobyn.buny.plus/comic/4/</guid>
+            <category type="storyline">Chapter One</category>
+            <category type="character">Hazel</category>
+            <category type="character">Robyn</category>
+            <description><![CDATA[<p><img src="https://hazelandrobyn.buny.plus/content/comics/4/page4.png"></p>
+
+<hr>
+
+<p></p>
+]]></description>
+        </item>
+        <item>
+            <title>The Beginning (Page 5)</title>
+            <dc:creator>Lily B. ~ BUNyPLUS</dc:creator>
+            <pubDate>Sun, 02 Mar 2025 00:00:00 +0000</pubDate>
+            <link>https://hazelandrobyn.buny.plus/comic/5/</link>
+            <guid isPermaLink="true">https://hazelandrobyn.buny.plus/comic/5/</guid>
+            <category type="storyline">Chapter One</category>
+            <category type="character">Hazel</category>
+            <category type="character">Robyn</category>
+            <description><![CDATA[<p><img src="https://hazelandrobyn.buny.plus/content/comics/5/page5.png"></p>
+
+<hr>
+
+<p></p>
+]]></description>
+        </item>
+        <item>
+            <title>Nervous</title>
+            <dc:creator>Lily B. ~ BUNyPLUS</dc:creator>
+            <pubDate>Sat, 20 Sep 2025 00:00:00 +0000</pubDate>
+            <link>https://hazelandrobyn.buny.plus/comic/6/</link>
+            <guid isPermaLink="true">https://hazelandrobyn.buny.plus/comic/6/</guid>
+            <category type="storyline">Chapter One</category>
+            <category type="character">Hazel</category>
+            <category type="character">Robyn</category>
+            <category type="tag">one_off</category>
+            <description><![CDATA[<p><img src="https://hazelandrobyn.buny.plus/content/comics/6/page.png"></p>
+
+<hr>
+
+<p></p>
+]]></description>
+        </item>
+    </channel>
+</rss>
